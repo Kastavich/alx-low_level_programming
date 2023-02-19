@@ -1,8 +1,8 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include <unistd>
 /**
- * main - A program that prints a line to a standard error
- * Return: 1 (Success)
+ * main - print "and that piece of art is useful" - Dora Korpar, 2015-10-19",
+ * followed by a new line, to standard error.
+ * Return: Always 1
  */
 int main(void)
 {
