@@ -8,22 +8,20 @@
 int main(void)
 {
 	int t;
-	long u = 1, v = 2;
+	long u = 1, v = 2, tot;
 
-	while (t < 52)
+	for (t = 0 ; t < 50 ; t++)
 	{
-		if (t == 0)
-			printf("%ld", u);
-		else if (t == 1)
-			printf(", %ld", v);
-		else
+		tot = u + v;
+		printf("%lu", tot);
 		{
-			v += u;
-			u = v - u;
-			printf(", %ld", v);
+			u = v;
+			v = tot;
 		}
-		++t;
+		if (t == 49)
+			printf("\n");
+		else
+			printf(",");
 	}
-	printf("\n");
 	return (0);
 }
