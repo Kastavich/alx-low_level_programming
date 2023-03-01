@@ -10,7 +10,7 @@ int main(void)
 	int t;
 	long u = 1, v = 2;
 
-	while (t < 50)
+	while (t < 52)
 	{
 		if (t == 0)
 			printf("%ld", u);
