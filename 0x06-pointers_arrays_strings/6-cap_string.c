@@ -6,30 +6,41 @@
  * Return: pointer to string
  */
 
-char *cap_string(char *)
+char *cap_string(char *str)
 {
-	int indx = 0;
+	int m;
+	int p;
+	char c[] = {44, 59, 46, 33, 63, 34, 40, 41, 123, 125, 32, 10, 9};
 
-	while (str[indx])
+	m = 0;
+
+	while (str[m] != '\0')
 	{
-		while (!(str[indx] >= 'a' && str[indx] <= 'z'))
-			indx++;
-		if (str[indx - 1] == ' '||
-				(str[indx - 1] == '\t' ||
-				 (str[indx - 1] == '\n' ||
-				  (str[indx - 1] == ',' ||
-				   (str[indx - 1] == ';' ||
-				    (str[indx - 1] == '.' ||
-				     (str[indx - 1] == '!' ||
-				      (str[indx - 1] == '?' ||
-				       (str[indx - 1] == '"' ||
-					(str[indx - 1] == '(' ||
-					 (str[indx - 1] == ')' ||
-					  (str[indx - 1] == '{' ||
-					   (str[indx - 1] == '}' ||
-					    indx == 0)
-					   str[indx] -= 32;
-					   indx++;
-					   }
-					   return (str);
-					   }
+		if (m == 0 && str[m] >= 97 && str[m] <= 122)
+		{
+			str[m] = str[m] - 32;
+		}
+		p = 0;
+
+		while (c[p] != '\0')
+		{
+			if (c[p] == str[m] && (str[m + 1] >= 97 && str[m + 1] <= 122))
+			{
+				str[m + 1] = str[m + 1] - 32;
+			}
+			p++;
+		}
+		m++;
+	}
+	return (str);
+}
+
+
+
+
+
+
+
+
+
+
